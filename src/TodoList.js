@@ -1,16 +1,11 @@
 import React, { useContext } from 'react';
 import { TodosContext } from './TodosContext';
-import { css } from 'emotion/macro';
-
-const listStyle = css`
-  list-style: none;
-`;
 
 const TodoList = () => {
   const { todos, toggleDone } = useContext(TodosContext);
 
   return (
-    <ul className={listStyle}>
+    <ul style={{ listStyle: 'none' }}>
       {todos.map((t, i) => (
         <li key={i}>
           <label>
