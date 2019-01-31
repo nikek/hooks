@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 import { TodosContext } from './TodosContext';
 
-const TodoInput = () => {
+function TodoInput() {
   const [value, setValue] = useState('');
   const { addTodo } = useContext(TodosContext);
 
@@ -23,6 +23,6 @@ const TodoInput = () => {
       <button type="submit">Submit</button>
     </form>
   );
-};
+}
 
 export default TodoInput;
