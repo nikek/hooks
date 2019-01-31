@@ -15,12 +15,16 @@ function ChatAPI() {
     if (!friends[id].callbacks.includes(cb)) {
       friends[id].callbacks.push(cb);
     }
+
+    // console.log('sub: ALL FRIENDS', JSON.stringify(friends, null, 2));
   }
 
   function unsubscribeFromFriendStatus(id, cb) {
     if (friends[id]) {
       friends[id].callbacks = friends[id].callbacks.filter(c => c !== cb);
     }
+
+    // console.log('unsub: ALL FRIENDS', JSON.stringify(friends, null, 2));
   }
 
   function triggerStatusChange(id, status) {
