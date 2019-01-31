@@ -19,5 +19,7 @@ export default function FriendStatus(props) {
   if (isOnline === null) {
     return 'Loading...';
   }
-  return isOnline ? `${props.friend.id} Online` : `${props.friend.id} Offline`;
+  return isOnline
+    ? `${props.friend.id} Online 🍏`
+    : `${props.friend.id} Offline 🍎`;
 }

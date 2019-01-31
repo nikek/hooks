@@ -4,12 +4,16 @@ import './App.css';
 import FriendStatus from './FriendStatus';
 
 function App() {
-  const [id, setId] = useState(123);
+  const [id, setId] = useState('harry');
   return (
     <div className="App">
       <header className="App-header">
         <FriendStatus friend={{ id: id }} />
-        <input value={id} onChange={e => setId(e.target.value)} />
+        <select value={id} onChange={e => setId(e.target.value)}>
+          <option value="ron">Ron</option>
+          <option value="hermione">Hermione</option>
+          <option value="harry">Harry</option>
+        </select>
       </header>
     </div>
   );
