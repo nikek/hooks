@@ -5,16 +5,16 @@ const TodoList = () => {
   const { todos, toggleDone } = useContext(TodosContext);
 
   return (
-    <ul style={{ listStyle: 'none' }}>
-      {todos.map((t, i) => (
+    <ul>
+      {todos.map((todo, i) => (
         <li key={i}>
           <label>
             <input
               type="checkbox"
-              checked={t.done}
-              onChange={() => toggleDone(i, !t.done)}
+              checked={todo.done}
+              onChange={() => toggleDone(todo.id)}
             />
-            {t.title}
+            {todo.title}
           </label>
         </li>
       ))}

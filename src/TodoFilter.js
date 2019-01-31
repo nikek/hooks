@@ -8,7 +8,7 @@ const TodoFilter = () => {
     setFilter(e.target.value);
   }
   return (
-    <aside style={{ display: 'grid' }}>
+    <aside>
       <label>
         <input
           type="radio"

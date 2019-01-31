@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
 function useTodos() {
-  const [todos, setTodos] = useState([{ title: 'Buy Oatly', done: false }]);
+  const [nextId, setNextId] = useState(1);
   const [filter, setFilter] = useState('all');
+  const [todos, setTodos] = useState([
+    { id: 0, title: 'Buy Oatly', done: false }
+  ]);
 
   function addTodo(todo) {
-    setTodos(todos => todos.concat(todo));
+    setTodos(todos => todos.concat({ id: nextId, ...todo }));
+    setNextId(nextId + 1);
   }
   function removeTodo(todo) {
     setTodos(todos => todos.filter(t => t != todo));
@@ -19,8 +23,9 @@ function useTodos() {
     return filter === 'done' ? todo.done : !todo.done;
   }
 
-  function toggleDone(index, done) {
-    const newTodo = Object.assign({}, todos[index], { done });
+  function toggleDone(id) {
+    const index = todos.findIndex(t => t.id === id);
+    const newTodo = { ...todos[index], done: !todos[index].done };
     setTodos([...todos.slice(0, index), newTodo, ...todos.slice(index + 1)]);
   }
 
