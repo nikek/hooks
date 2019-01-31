@@ -11,9 +11,6 @@ function useTodos() {
     setTodos(todos => todos.concat({ id: nextId, ...todo }));
     setNextId(nextId + 1);
   }
-  function removeTodo(todo) {
-    setTodos(todos => todos.filter(t => t != todo));
-  }
 
   function filterFn(todo) {
     if (filter === 'all') {
@@ -35,8 +32,7 @@ function useTodos() {
     filterFn,
     todos: todos.filter(filterFn),
     toggleDone,
-    addTodo,
-    removeTodo
+    addTodo
   };
 }
 

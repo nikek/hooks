@@ -37,3 +37,8 @@ input[type='radio'] {
   position: relative;
   top: calc(-3px - 0.1vmin);
 }
+
+.remove {
+  border: none;
+  background: none;
+}
