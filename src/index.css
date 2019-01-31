@@ -35,5 +35,5 @@ input {
 input[type='checkbox'],
 input[type='radio'] {
   position: relative;
-  top: -5px;
+  top: calc(-3px - 0.1vmin);
 }

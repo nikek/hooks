@@ -8,8 +8,8 @@ const TodoInput = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(value);
     addTodo({ title: value, done: false });
+    setValue('');
   }
   function handleValueChange(e) {
     setValue(e.target.value);
@@ -18,7 +18,7 @@ const TodoInput = () => {
     <form onSubmit={handleSubmit}>
       <label>
         <h2>New todo!</h2>
-        <input type="text" onChange={handleValueChange} />
+        <input type="text" value={value} onChange={handleValueChange} />
       </label>
       <button type="submit">Submit</button>
     </form>
